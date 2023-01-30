@@ -1,11 +1,11 @@
-import { ChangeEvent, Suspense, useEffect, useState } from "react";
-import { getItems } from "./api/apiItems";
+import { ChangeEvent, Suspense, useState } from "react";
+import { Routes, Route, Outlet, useNavigate } from "react-router-dom";
 import "./App.css";
-import { SearchItem } from "./models";
+import { Items } from "./components";
 
 function App() {
-  const [items, setItems] = useState<SearchItem[]>([] as SearchItem[]);
   const [searchValue, setSearchValue] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
@@ -14,29 +14,29 @@ function App() {
   const handleSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    getItems(searchValue).then((res) => {
-      setItems(res.items.slice(0, 4));
+    navigate({
+      pathname: "/items",
+      search: `?search=${searchValue}`,
     });
   };
 
   return (
     <div className="App">
-      <form action="" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Nunca dejes de buscar"
-          value={searchValue}
-          onChange={handleChange}
-        />
-      </form>
+      <header>
+        <form action="" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Nunca dejes de buscar"
+            value={searchValue}
+            onChange={handleChange}
+          />
+        </form>
+      </header>
 
-      <Suspense fallback={<p>Loading...</p>}>
-        <ul>
-          {items.map((item: SearchItem) => (
-            <li key={item.id}>{item.title}</li>
-          ))}
-        </ul>
-      </Suspense>
+      <Routes>
+        <Route path="/" element={<Outlet />} />
+        <Route path="/items" element={<Items />} />
+      </Routes>
     </div>
   );
 }
