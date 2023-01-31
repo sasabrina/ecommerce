@@ -1,0 +1,25 @@
+@import "@/styles/_variables";
+@import "@/styles/_mixins";
+
+.container {
+  @include container;
+  margin: 16px auto;
+  list-style: none;
+  display: flex;
+  gap: 10px;
+
+  .category {
+    color: $gray;
+
+    &::after {
+      content: ">";
+      margin-left: 10px;
+    }
+
+    &:last-of-type {
+      &::after {
+        content: " ";
+      }
+    }
+  }
+}

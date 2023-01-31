@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { ItemsContext } from "@/context";
 import { ImageContainer, SearchBar } from "@/components";
 import logo from "@/assets/logo.png";
-import styles from "@/App.module.scss";
+import styles from "./header.module.scss";
 
 type Props = {};
 
