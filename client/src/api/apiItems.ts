@@ -1,4 +1,4 @@
-import { SearchItemsResponse, ItemResponse } from "../models";
+import { SearchItemsResponse, ItemResponse } from "@/models";
 
 const BASE_URL = "http://localhost:3000/api/items";
 

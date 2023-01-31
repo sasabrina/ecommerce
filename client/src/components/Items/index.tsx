@@ -1,7 +1,7 @@
 import { Suspense, useEffect, useState } from "react";
 import { useLocation, Link } from "react-router-dom";
-import { getItems } from "../../api/apiItems";
-import { SearchItem } from "../../models";
+import { getItems } from "@/api/apiItems";
+import { SearchItem } from "@/models";
 
 type Props = {};
 

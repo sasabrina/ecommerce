@@ -1,7 +1,7 @@
 import { useEffect, useState, Suspense } from "react";
 import { useParams } from "react-router-dom";
-import { getItem } from "../../api/apiItems";
-import { Item as ItemType } from "../../models";
+import { getItem } from "@/api/apiItems";
+import { Item as ItemType } from "@/models";
 
 type Props = {};
 
