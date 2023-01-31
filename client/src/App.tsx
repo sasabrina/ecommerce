@@ -1,7 +1,7 @@
-import { ChangeEvent, Suspense, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { Routes, Route, Outlet, useNavigate } from "react-router-dom";
 import "./App.css";
-import { Items } from "./components";
+import { Item, Items } from "./components";
 
 function App() {
   const [searchValue, setSearchValue] = useState("");
@@ -36,6 +36,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Outlet />} />
         <Route path="/items" element={<Items />} />
+        <Route path="/item/:id" element={<Item />} />
       </Routes>
     </div>
   );

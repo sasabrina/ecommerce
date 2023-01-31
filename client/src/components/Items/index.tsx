@@ -1,5 +1,5 @@
 import { Suspense, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { getItems } from "../../api/apiItems";
 import { SearchItem } from "../../models";
 
@@ -24,7 +24,9 @@ const Items = ({}: Props) => {
     <Suspense fallback={<p>Loading...</p>}>
       <ul>
         {items.map((item: SearchItem) => (
-          <li key={item.id}>{item.title}</li>
+          <li key={item.id}>
+            <Link to={`/item/${item.id}`}>{item.title}</Link>
+          </li>
         ))}
       </ul>
     </Suspense>
