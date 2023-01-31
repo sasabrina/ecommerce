@@ -1,23 +1,17 @@
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useContext } from "react";
 import { useLocation, Link } from "react-router-dom";
-import { getItems } from "@/api/apiItems";
 import { SearchItem } from "@/models";
+import { ItemsContext } from "@/context";
 
 type Props = {};
 
 const Items = ({}: Props) => {
+  const { items, getItems } = useContext(ItemsContext);
   const location = useLocation();
-  const [items, setItems] = useState<SearchItem[]>([] as SearchItem[]);
-
-  const getData = async () => {
-    const query = location.search.split("=")[1];
-    getItems(query).then((res) => {
-      setItems(res.items.slice(0, 4));
-    });
-  };
 
   useEffect(() => {
-    getData();
+    const query = location.search.split("=")[1];
+    getItems(query);
   }, [location]);
 
   return (

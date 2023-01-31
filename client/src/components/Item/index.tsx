@@ -1,22 +1,15 @@
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, Suspense, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { getItem } from "@/api/apiItems";
-import { Item as ItemType } from "@/models";
+import { ItemsContext } from "@/context";
 
 type Props = {};
 
 const Item = ({}: Props) => {
+  const { item, getItem } = useContext(ItemsContext);
   const { id } = useParams();
-  const [item, setItem] = useState<ItemType>({} as ItemType);
-
-  const getData = () => {
-    getItem(id).then((res) => {
-      setItem(res.item);
-    });
-  };
 
   useEffect(() => {
-    getData();
+    getItem(id);
   }, [id]);
 
   return <Suspense>{item && item.title}</Suspense>;

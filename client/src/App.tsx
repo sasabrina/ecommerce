@@ -1,14 +1,15 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useContext } from "react";
 import { Routes, Route, Outlet, useNavigate } from "react-router-dom";
-import "./App.css";
 import { Item, Items } from "./components";
+import "./App.css";
+import { ItemsContext } from "./context";
 
 function App() {
-  const [searchValue, setSearchValue] = useState("");
+  const { searchValue, handleSearch } = useContext(ItemsContext);
   const navigate = useNavigate();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(e.target.value);
+    handleSearch(e.target.value);
   };
 
   const handleSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
