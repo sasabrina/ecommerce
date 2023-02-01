@@ -2,6 +2,9 @@ import { Suspense, useEffect, useContext } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { SearchItem } from "@/models";
 import { ItemsContext } from "@/context";
+import styles from "./items.module.scss";
+import ImageContainer from "../ImageContainer";
+import ItemSearch from "../ItemSearch";
 
 type Props = {};
 
@@ -16,10 +19,12 @@ const Items = ({}: Props) => {
 
   return (
     <Suspense fallback={<p>Loading...</p>}>
-      <ul>
+      <ul className={styles.container}>
         {items.map((item: SearchItem) => (
-          <li key={item.id}>
-            <Link to={`/item/${item.id}`}>{item.title}</Link>
+          <li key={item.id} className={styles.item}>
+            <Link to={`/item/${item.id}`}>
+              <ItemSearch item={item} />
+            </Link>
           </li>
         ))}
       </ul>

@@ -27,9 +27,7 @@ const Header = ({}: Props) => {
   return (
     <header className={styles.header}>
       <div className={styles.headerWrapper}>
-        <Link to="/">
-          <ImageContainer src={logo} width={50} height={35} />
-        </Link>
+        <ImageContainer src={logo} width={50} height={35} />
         <SearchBar
           value={searchValue}
           onchange={handleChange}

@@ -1,4 +1,4 @@
-import { useContext, Suspense } from "react";
+import { useContext } from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
 import { ItemsContext } from "@/context";
 import { Header, Item, Items, Breadcrumb } from "./components";

@@ -1,0 +1,23 @@
+@import "@/styles/_variables";
+@import "@/styles/_mixins";
+
+.container {
+  @include container;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+
+  .item {
+    margin: 0 16px;
+    border-bottom: 1px solid $light_gray;
+
+    &:last-of-type {
+      border: none;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

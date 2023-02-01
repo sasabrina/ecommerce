@@ -1,0 +1,39 @@
+@import "@/styles/_variables";
+@import "@/styles/_mixins";
+
+.product {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  color: $dark;
+
+  figure {
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .details {
+    width: 100%;
+    padding: 16px 0;
+
+    .priceWrapper {
+      display: flex;
+      gap: 10px;
+
+      .price {
+        font-size: 24px;
+      }
+    }
+
+    .title {
+      font-size: 18px;
+      width: 340px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 32px;
+    }
+  }
+}
