@@ -3,7 +3,6 @@ import { getItem, getItems } from "../services";
 
 export const itemsList = async (req: Request, res: Response) => {
   const query = req.query.q;
-  console.log(`Controller ${query}`);
 
   const items = await getItems(query).then((res) => res);
 

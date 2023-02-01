@@ -25,8 +25,8 @@ export const getItems = async (search: any): Promise<any> => {
         title: item.title,
         price: {
           currency: item.currency_id === "ARS" ? "$" : item.currency_id,
-          amount: item.price,
-          decimal: item.price,
+          amount: getPriceAndDecimals(item.price, "price"),
+          decimals: getPriceAndDecimals(item.price, "decimals"),
         },
         picture: item.thumbnail,
         condition: item.condition,
