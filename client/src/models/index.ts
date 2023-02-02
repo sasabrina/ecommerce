@@ -4,7 +4,7 @@ export type SearchItem = {
   price: {
     currency: string;
     amount: number;
-    decimal: number;
+    decimals: number;
   };
   picture: string;
   condition: string;
@@ -30,7 +30,7 @@ export type Item = {
   };
   picture: string;
   condition: string;
-  free_shippint: boolean;
+  free_shipping: boolean;
   sold_quantity: number;
   description: string;
 };

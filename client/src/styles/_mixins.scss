@@ -2,4 +2,18 @@
   width: 100%;
   max-width: 955px;
   margin: 0 auto;
+  border-radius: 3px;
+}
+
+@mixin text_length($width, $lines) {
+  width: $width;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin decimal {
+  font-size: 16px;
 }

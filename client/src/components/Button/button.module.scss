@@ -1,0 +1,11 @@
+@import "@/styles/_variables";
+@import "@/styles/_mixins";
+
+.primary {
+  width: 100%;
+  background-color: $blue;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+}

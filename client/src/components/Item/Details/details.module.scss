@@ -1,0 +1,29 @@
+@import "@/styles/_variables";
+@import "@/styles/_mixins";
+
+.details {
+  width: 250px;
+
+  .condition {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .title {
+    @include text_length(200px, 2);
+    font-size: 24px;
+  }
+
+  .price {
+    font-size: 46px;
+    margin: 32px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+
+    .decimals {
+      @include decimal;
+      margin-top: 10px;
+    }
+  }
+}

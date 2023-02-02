@@ -1,7 +1,7 @@
 import styles from "./imageContainer.module.scss";
 
 type Props = {
-  width: string | number;
+  width?: string | number;
   height?: string | number;
   src: string;
 };
