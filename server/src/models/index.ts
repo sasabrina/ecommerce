@@ -23,7 +23,7 @@ export type Item = {
   free_shipping: Boolean;
 };
 
-export type ApiItemsResponse = {
+export type ItemsApiResponse = {
   author: {
     name: string;
     lastname: string;

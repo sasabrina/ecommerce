@@ -8,7 +8,7 @@ const fetchData = async (url: string) => {
   return response;
 };
 
-export const getItems = async (search: any): Promise<any> => {
+export const getItems = async (search: string): Promise<any> => {
   try {
     const response: ItemsResponse = await fetchData(
       `/sites/MLA/search?q=${search}`
@@ -34,11 +34,11 @@ export const getItems = async (search: any): Promise<any> => {
       })),
     };
   } catch (err) {
-    console.log(err);
+    console.log(`Error: ${err}`);
   }
 };
 
-export const getItem = async (id: any): Promise<any> => {
+export const getItem = async (id: string): Promise<any> => {
   try {
     const [item, description] = await Promise.all([
       fetchData(`items/${id}`),
@@ -66,6 +66,6 @@ export const getItem = async (id: any): Promise<any> => {
       },
     };
   } catch (err) {
-    console.log(err);
+    console.log(`Error: ${err}`);
   }
 };
