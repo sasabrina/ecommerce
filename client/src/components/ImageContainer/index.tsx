@@ -6,7 +6,7 @@ type Props = {
   src: string;
 };
 
-const ImageContainer = ({ width, height, src }: Props) => {
+const ImageContainer = ({ width, height, src }: Props): JSX.Element => {
   const boxWidth = width || "auto";
 
   return (

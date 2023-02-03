@@ -7,8 +7,7 @@ export const fetchItems = async (
 ): Promise<SearchItemsResponse> => {
   const request = await fetch(`${BASE_URL}?q=${search}`);
 
-  const response: SearchItemsResponse = await request.json();
-  return response;
+  return await request.json();
 };
 
 export const fetchItem = async (
@@ -16,7 +15,5 @@ export const fetchItem = async (
 ): Promise<ItemResponse> => {
   const request = await fetch(`${BASE_URL}/${id}`);
 
-  const response: ItemResponse = await request.json();
-
-  return response;
+  return await request.json();
 };

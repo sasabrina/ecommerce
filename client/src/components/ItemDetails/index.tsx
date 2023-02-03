@@ -7,7 +7,7 @@ type Props = {
   item: Item;
 };
 
-const ItemDetails = ({ item }: Props) => {
+const ItemDetails = ({ item }: Props): JSX.Element => {
   return (
     <>
       <div className={styles.detailsWrapper}>

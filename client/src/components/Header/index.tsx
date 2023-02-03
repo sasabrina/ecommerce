@@ -5,9 +5,7 @@ import { ImageContainer, SearchBar } from "@/components";
 import logo from "@/assets/logo.png";
 import styles from "./header.module.scss";
 
-type Props = {};
-
-const Header = ({}: Props) => {
+const Header = (): JSX.Element => {
   const { searchValue, handleSearch } = useContext(ItemsContext);
   const navigate = useNavigate();
 
@@ -34,6 +32,7 @@ const Header = ({}: Props) => {
         <Link to="/">
           <ImageContainer src={logo} width={50} height={35} />
         </Link>
+
         <SearchBar
           value={searchValue}
           onchange={handleChange}

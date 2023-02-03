@@ -9,7 +9,7 @@ type Props = {
   onsubmit: FormEventHandler;
 };
 
-const SearchBar = ({ value, onchange, onsubmit }: Props) => {
+const SearchBar = ({ value, onchange, onsubmit }: Props): JSX.Element => {
   return (
     <form action="" onSubmit={onsubmit} className={styles.form}>
       <input

@@ -7,7 +7,7 @@ type Props = {
   item: SearchItem;
 };
 
-const ItemSearch = ({ item }: Props) => {
+const ItemSearch = ({ item }: Props): JSX.Element => {
   return (
     <div className={styles.product}>
       <ImageContainer src={item.picture} width={180} />

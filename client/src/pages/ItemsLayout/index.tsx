@@ -7,7 +7,7 @@ type Props = {
   children: JSX.Element | JSX.Element[];
 };
 
-const ItemsLayout = ({ children }: Props) => {
+const ItemsLayout = ({ children }: Props): JSX.Element => {
   const { loading, categories } = useContext(ItemsContext);
 
   return (

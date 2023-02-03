@@ -4,9 +4,7 @@ import { ItemsContext } from "@/context";
 import { ItemDetails } from "@/components";
 import ItemsLayout from "../ItemsLayout";
 
-type Props = {};
-
-const Item = ({}: Props) => {
+const Item = (): JSX.Element => {
   const { item, getItem } = useContext(ItemsContext);
   const { id } = useParams();
 

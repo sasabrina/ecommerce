@@ -9,7 +9,7 @@ type Props = {
   shipping: SearchItem["free_shipping"];
 };
 
-const Price = ({ price, shipping }: Props) => {
+const Price = ({ price, shipping }: Props): JSX.Element => {
   return (
     <div className={styles.priceWrapper}>
       <p className={styles.price}>

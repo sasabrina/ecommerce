@@ -2,9 +2,7 @@ import { Header } from "@/components";
 import { Outlet } from "react-router-dom";
 import styles from "@/App.module.scss";
 
-type Props = {};
-
-const Home = ({}: Props) => {
+const Home = (): JSX.Element => {
   return (
     <main className={styles.main}>
       <Header />

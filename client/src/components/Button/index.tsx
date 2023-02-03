@@ -6,7 +6,7 @@ type Props = {
   type: "primary" | "secondary";
 };
 
-const Button = ({ text, onclick, type }: Props) => {
+const Button = ({ text, onclick, type }: Props): JSX.Element => {
   return (
     <button onClick={onclick} className={styles[type]}>
       {text}

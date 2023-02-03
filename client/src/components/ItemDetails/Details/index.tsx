@@ -7,7 +7,7 @@ type Props = {
   item: Item;
 };
 
-const Details = ({ item }: Props) => {
+const Details = ({ item }: Props): JSX.Element => {
   const condition = item.condition === "new" ? "Nuevo" : "Usado";
 
   return (
