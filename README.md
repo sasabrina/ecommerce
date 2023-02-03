@@ -14,7 +14,7 @@ En base a los diseños dados, crear tres vistas que deben ser navegables de mane
 
 Construir los siguientes endpoints para ser utilizados desde las vistas:
 
-- `/api/items?q=​:query` debe
+- `/api/items?q=​:query`
 - `/api/items/​:id`
 
 ## Stack de tecnologías
