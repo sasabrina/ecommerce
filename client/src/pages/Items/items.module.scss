@@ -2,7 +2,6 @@
 @import "@/styles/_mixins";
 
 .container {
-  @include container;
   list-style: none;
   display: flex;
   flex-direction: column;

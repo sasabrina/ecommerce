@@ -1,24 +1,16 @@
-import { useContext } from "react";
-import { Routes, Route, Outlet } from "react-router-dom";
-import { ItemsContext } from "@/context";
-import { Header, Item, Items, Breadcrumb } from "./components";
-import styles from "@/App.module.scss";
+import { Routes, Route } from "react-router-dom";
+import { Home, Item, Items } from "./pages";
 
 function App() {
-  const { categories } = useContext(ItemsContext);
-
   return (
-    <main className={styles.main}>
-      <Header />
-
-      {categories && <Breadcrumb categories={categories} />}
-
+    <>
       <Routes>
-        <Route path="/" element={<Outlet />} />
-        <Route path="/items" element={<Items />} />
-        <Route path="/item/:id" element={<Item />} />
+        <Route path="/" element={<Home />}>
+          <Route path="/items" element={<Items />} />
+          <Route path="/item/:id" element={<Item />} />
+        </Route>
       </Routes>
-    </main>
+    </>
   );
 }
 

@@ -18,16 +18,22 @@ const Header = ({}: Props) => {
   const handleSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    navigate({
-      pathname: "/items",
-      search: `?search=${searchValue}`,
-    });
+    if (searchValue.length > 2) {
+      navigate({
+        pathname: "/items",
+        search: `?search=${searchValue}`,
+      });
+    }
+
+    //TODO: show error message when searchValue is empty
   };
 
   return (
     <header className={styles.header}>
       <div className={styles.headerWrapper}>
-        <ImageContainer src={logo} width={50} height={35} />
+        <Link to="/">
+          <ImageContainer src={logo} width={50} height={35} />
+        </Link>
         <SearchBar
           value={searchValue}
           onchange={handleChange}

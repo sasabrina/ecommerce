@@ -1,0 +1,9 @@
+@import "@/styles/_variables";
+@import "@/styles/_mixins";
+
+.container {
+  @include container;
+  width: 100%;
+  background-color: #fff;
+  padding: 32px;
+}

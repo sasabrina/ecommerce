@@ -14,17 +14,21 @@ export const ItemsProvider = ({ children }: props) => {
   const [item, setItem] = useState<Item>({} as Item);
   const [categories, setCategories] = useState<string[]>([] as string[]);
 
+  // TODO: create error handler for none api response.
+
   const handleSearch = (value: string) => {
     setSearchValue(value);
   };
 
   const getItems = (query: string) => {
     setLoading(true);
-    fetchItems(query).then((res) => {
-      setItems(res.items.slice(0, 4));
-      setCategories(res.categories);
-      setLoading(false);
-    });
+    if (query.length) {
+      fetchItems(query).then((res) => {
+        setItems(res.items.slice(0, 4));
+        setCategories(res.categories);
+        setLoading(false);
+      });
+    }
   };
 
   const getItem = (id: string | undefined) => {
