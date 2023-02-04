@@ -27,21 +27,23 @@ Construir los siguientes endpoints para ser utilizados desde las vistas:
 
 ## Setup
 
-### Frontend
-
-El proyecto fue creado con [Vitejs](https://vitejs.dev/).  
-Desde el directorio `client` se deben ejecutar los siguientes comandos:
-
-1.  `npm install` para instalar dependencias.
-2.  `npm run dev` para correr el proyecto en modo desarrollo.
-
-Abrir [http://localhost:5173/](http://localhost:5173/)
-
 ### Backend
 
 Desde el directorio `server` se deben ejecutar los siguientes comandos:
 
 1.  `npm install` para instalar dependencias.
 2.  `npm run dev` para correr el proyecto en modo desarrollo.
+
+### Frontend
+
+El proyecto fue creado con [Vitejs](https://vitejs.dev/).  
+Una vez levantado el servidor, desde el directorio `client` se deben ejecutar los siguientes comandos:
+
+1.  `npm install` para instalar dependencias.
+2.  `npm run dev` para correr el proyecto en modo desarrollo.
+
+Abrir [http://localhost:5173/](http://localhost:5173/)
+
+
 
 Abrir [http://localhost:3000/api/items?q=reloj​](http://localhost:3000/api/items?q=reloj) o [http://localhost:3000/api/items/MLA1186514330](http://localhost:3000/api/items/MLA1186514330)
